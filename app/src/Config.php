@@ -15,11 +15,11 @@ class Config {
 
     public static function create(): self {
         return new self(
-            '127.0.0.1',
-            3306,
-            'todo_demo',
-            'root',
-            ''
+            getenv('DB_HOST') ?: '127.0.0.1',
+            (int) (getenv('DB_PORT') ?: 3306),
+            getenv('DB_NAME') ?: 'todo_demo',
+            getenv('DB_USER') ?: 'root',
+            getenv('DB_PASS') ?: ''
         );
     }
 

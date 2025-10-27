@@ -14,6 +14,7 @@ podman run --pod TodoAPP \
 
 podman run  --pod TodoAPP \
       -d \
+      --env-file ./app/.env \
       --name fpm \
       localhost/todo-pod-fpm:latest
 
